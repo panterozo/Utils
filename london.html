@@ -1,0 +1,24 @@
+<h1>GetUniqueList</h1>
+<h3>Function that retreives unique values from an array.</h3>
+<p>Copy and paste your array separated by 
+<select ng-model="selectedType" ng-init="selectedType=types[0]" ng-options="x.typeConcat for x in types">
+</select>
+<!--select ng-model="selectedType">
+	<option ng-repeat="x in types">{{x.typeConcat}}</option>
+</select-->
+into the below box.</p>
+<textarea rows="4" cols="60" ng-model="listToCheck"></textarea>
+<div style="display:block">
+	<label>Trim:
+		<input type="checkbox" ng-model="checks.trim">
+	</label>
+	<label>Blank:
+		<input type="checkbox" ng-model="checks.blank" >
+	</label>
+	<label>Case Insensitive
+		<input type="checkbox" ng-model="checks.insensitive" >
+		hello
+	</label>
+</div>
+<button class="btn btn-default" style="display:block" ng-click="checkList()">Check List</button>
+<p>{{msg}}</p>
