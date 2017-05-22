@@ -24,6 +24,7 @@ into the box below.</p>
 </div>
 <button class="btn btn-default" style="display:block" ng-click="checkList()">Check List</button>
 <p>{{msg}}</p>
+
 <p style="color:red" ng-if="msgError != undefined">{{msgError}}</p>
 <div ng-if="uniqueTableValues != undefined" class="uniqueValues">
 				<p>Unique List. Total elements ({{uniqueTableValues.split("\n").length}}):</p>
@@ -41,3 +42,4 @@ into the box below.</p>
 	  </tr>
 	</table>
 </div>
+

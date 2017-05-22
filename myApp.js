@@ -71,7 +71,6 @@ app.controller("londonCtrl", function ($scope) {
 			}catch(err){
 				$scope.msgError = err.toString();
 			}
-						
 		}
 
 		function arrayOptions(array){
