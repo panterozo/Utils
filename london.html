@@ -1,0 +1,43 @@
+<h1>GetUniqueList</h1>
+<h3>Function that retreives unique values from a list.</h3>
+<p>Copy and paste your list separated by 
+<select ng-model="selectedType" ng-init="selectedType=types[0]" ng-options="x.typeConcat for x in types">
+</select>
+<!--select ng-model="selectedType">
+	<option ng-repeat="x in types">{{x.typeConcat}}</option>
+</select-->
+into the box below.</p>
+<textarea rows="4" cols="60" ng-model="listToCheck"></textarea>
+<div style="display:block">
+	<label>
+		<input type="checkbox" ng-model="checks.trim">
+		Trim
+	</label>
+	<label>
+		<input type="checkbox" ng-model="checks.blank" >
+		Blank
+	</label>
+	<label>
+		<input type="checkbox" ng-model="checks.insensitive" >
+		Case Insensitive
+	</label>
+</div>
+<button class="btn btn-default" style="display:block" ng-click="checkList()">Check List</button>
+<p>{{msg}}</p>
+<p style="color:red" ng-if="msgError != undefined">{{msgError}}</p>
+<div ng-if="uniqueTableValues != undefined" class="uniqueValues">
+				<p>Unique List. Total elements ({{uniqueTableValues.split("\n").length}}):</p>
+	<textarea  rows="4" cols="60" ng-model="uniqueTableValues"></textarea>	
+</div>
+<div ng-if="duplicatedTableValues != undefined" class="duplicatedValues">
+	<table class="table table-bordered" style="width: 50%;">
+		<tr>
+			<th>Element</th>
+			<th>Occurrences</th>
+		</tr>
+	  <tr ng-repeat="x in duplicatedTableValues">
+	    <td>{{ x.element }}</td>
+	    <td>{{ x.count +1 }}</td>
+	  </tr>
+	</table>
+</div>
