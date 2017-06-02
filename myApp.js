@@ -8,16 +8,16 @@ app.config(function($routeProvider) {
         templateUrl : "main.html"
     })
     .when("/getUniqueList", {
-        templateUrl : "london.html",
-        controller : "londonCtrl"
+        templateUrl : "getUniqueList.html",
+        controller : "getUniqueListController"
     })
-    .when("/paris", {
-        templateUrl : "paris.html",
-        controller : "parisCtrl"
+    .when("/operationsRut", {
+        templateUrl : "operationsRut.html",
+        controller : "operationsRutController"
     });
 });
 
-app.controller("londonCtrl", function ($scope) {
+app.controller("getUniqueListController", function ($scope) {
 		$scope.types = [
     	{typeConcat : "new line", symbol : "\n"},
 			{typeConcat : "semicolon", symbol : ";"},
@@ -25,7 +25,7 @@ app.controller("londonCtrl", function ($scope) {
 			{typeConcat : "underscore", symbol : "_"},
 		];
 
-    $scope.msg = "I love London";
+    $scope.msg = "";
 		$scope.checks = { 
 			trim : true,	 
 			blank : true,
@@ -122,9 +122,24 @@ app.controller("londonCtrl", function ($scope) {
 		}
 });
 
-app.controller("parisCtrl", function ($scope) {
-    $scope.msg = "I love Paris";
-		$scope.checkList = function(){
-			$scope.msg = "Clicked";
+app.controller("operationsRutController", function ($scope) {
+    $scope.msg = "";
+    $scope.rut = "";
+
+		$scope.checkDigit = function(){
+			if($scope.rut != ""){
+				var sum = 0;
+				var counter = 2;
+				for(var i=$scope.rut.length-1; i>=0; i--){
+					sum = sum + ($scope.rut[i]*counter);
+					counter++
+					if(counter>7){counter=2;}
+				}
+				/*var div = sum / 11;*/
+				var modDiv = sum % 11;
+				if((11 - modDiv)== 10){$scope.msg = "K";}
+				if((11 - modDiv)== 11){$scope.msg = "0";}
+				if((11 - modDiv)!= 10 && (11 - modDiv)!= 11){$scope.msg = 11-modDiv;}
+			}
 		}
 });;
