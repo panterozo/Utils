@@ -1,10 +1,13 @@
 <h1>Operations Rut</h1>
-<h3>Function that retreives the check digit from a RUT number</h3>
-<p>Enter the rut on the box below, and the page will calculate the check digit</p>
+<h3>Function that retreives the verifying digit from a RUT number</h3>
+<p>Enter the rut number on the box below, and the page will calculate the verifying digit</p>
 <div>
 	<label>
-		<input type="textbox"  ng-model="rut">
+		<input type="textbox"  ng-model="rutIn">
+	</label>
+	<label ng-if="rutOut != ''">
+		{{rutOut}}
 	</label>
 </div>
 <button class="btn btn-default" style="display:block" ng-click="checkDigit()">Check Digit</button>
-<p>{{msg}}</p>
+<p style="color:red" ng-if="msgError != undefined">{{msgError}}</p>

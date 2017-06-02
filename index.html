@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+		<link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
 
     <title>Simple Sidebar - Start Bootstrap Template</title>
 
@@ -16,6 +17,10 @@
 		<!-- Angular Route -->
 		<script src="js/angular-route.js"></script>
 		<script src="myApp.js"></script> 
+		<!-- Controllers --> 
+		<script src="operationsRutController.js"></script> 
+		<script src="getUniqueListController.js"></script> 
+		<script src="toOneLineStringController.js"></script> 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -41,15 +46,12 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#home">
-                        Utilidades
+                        Utilities
                     </a>
                 </li>
                 <li>
                     <a href="#getUniqueList">GetUniqueList</a>
-                </li>
-                <li>
-                    <a href="#toOneLineString">ToOneLineString</a>
-                </li>
+                </li>                
                 <!--li>
                     <a href="#">Overview</a>
                 </li>
@@ -63,7 +65,10 @@
                     <a href="#">Services</a>
                 </li-->
                 <li>
-                    <a href="#operationsRut">Check Digit Rut</a>
+                    <a href="#operationsRut">GetVerifyingDigit</a>
+                </li>
+								<li>
+                    <a href="#toOneLineString">RemoveBreakLines</a>
                 </li>
             </ul>
         </div>
