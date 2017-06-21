@@ -1,10 +1,21 @@
-<h1>Operations Rut</h1>
-<h3>Function that retreives the check digit from a RUT number</h3>
-<p>Enter the rut on the box below, and the page will calculate the check digit</p>
+<h1>Replace Elements</h1>
+<h3>Function that replace elements in a given string</h3>
+<p>Enter in the box below the string to replace from</p>
 <div>
 	<label>
-		<input type="textbox"  ng-model="rut">
+    <textarea  rows="4" cols="60" ng-model="stringToReplace"></textarea>
+	</label>
+	<label>
+		<input type="textbox"  ng-model="replaceIn">
+		<input type="textbox"  ng-model="replaceOut">
 	</label>
 </div>
-<button class="btn btn-default" style="display:block" ng-click="checkDigit()">Check Digit</button>
-<p>{{msg}}</p>
+<!--select ng-model="selectedType" ng-init="selectedType=types[0]" ng-options="x.typeConcat for x in types">
+</select-->
+<button class="btn btn-default" style="display:block" ng-click="replaceString()">Replace</button>
+<p style="color:red" ng-if="msgError != undefined">{{msgError}}</p>
+<div>
+	<label>
+    <textarea  rows="4" cols="60" ng-model="stringOut"></textarea>
+	</label>
+</div>

@@ -1,0 +1,24 @@
+[diff]
+    tool = bc3
+
+[difftool]
+    prompt = false
+
+[difftool "bc3"]
+#    cmd = \"c:/program files (x86)/beyond compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+    cmd = \"C:/Program Files (x86)/Beyond Compare 3/BCompare.exe\"  \"$LOCAL\" \"$REMOTE\"
+
+[merge]
+    tool = bc3
+
+[mergetool]
+    prompt = false
+    keepBackup = false
+
+[mergetool "bc3"]
+#    cmd = \"c:/program files (x86)/beyond compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    cmd = \"C:/Program Files (x86)/Beyond Compare 3/BCompare.exe\"  \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    trustExitCode = true
+
+
+
