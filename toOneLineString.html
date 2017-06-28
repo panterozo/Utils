@@ -1,21 +1,49 @@
 <h1>Replace Elements</h1>
 <h3>Function that replace elements in a given string</h3>
-<p>Enter in the box below the string to replace from</p>
+<p>Enter in the box below the string to replace</p>
 <div>
-	<label>
-    <textarea  rows="4" cols="60" ng-model="stringToReplace"></textarea>
-	</label>
-	<label>
-		<input type="textbox"  ng-model="replaceIn">
-		<input type="textbox"  ng-model="replaceOut">
-	</label>
+		<div style="display:block">
+    	<textarea  rows="8" cols="80" ng-model="stringToReplace"></textarea>
+		</div>
+		<div style="display:block">
+			<label>
+				<input type="checkbox" ng-model="checks.toOneLine">
+				<b>\n</b>
+			</label>
+			<label>
+				<input type="checkbox" ng-model="checks.tabSpaces" >
+				<b>\t</b>
+			</label>
+			<label>
+				<input type="checkbox" ng-model="checks.trim" >
+				<b>trim</b>
+			</label>
+			<label>
+				<input type="checkbox" ng-model="checks.toLowerCase" ng-click="UpdateCheckBox('toLowerCase')">
+				<b>to Lower Case</b>
+			</label>
+			<label>
+				<input type="checkbox" ng-model="checks.toUpperCase" ng-click="UpdateCheckBox('toUpperCase')">
+				<b>to Upper Case</b>
+			</label>
+		</div>
+		<div style="display:block">
+			<label>
+				<input type="textbox"  ng-model="replaceIn"> Replace for
+				<input type="textbox"  ng-model="replaceOut">
+			</label>
+			<label>
+			<button class="btn btn-default" style="display:block" ng-click="replaceString()">Replace</button>
+			</label>
+		</div>
 </div>
+
 <!--select ng-model="selectedType" ng-init="selectedType=types[0]" ng-options="x.typeConcat for x in types">
 </select-->
-<button class="btn btn-default" style="display:block" ng-click="replaceString()">Replace</button>
 <p style="color:red" ng-if="msgError != undefined">{{msgError}}</p>
-<div>
+<hr style="border-top: 1px solid rgb(169, 169, 169); margin-right: 1000px;">
+<div style="display:block; margin-top: 20px;">
 	<label>
-    <textarea  rows="4" cols="60" ng-model="stringOut"></textarea>
+    <textarea  rows="8" cols="60" ng-model="stringOut"></textarea>
 	</label>
 </div>

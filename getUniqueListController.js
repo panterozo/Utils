@@ -59,7 +59,7 @@ app.controller("getUniqueListController", function ($scope) {
 			var newArray = [];			
 			var indexNewArray = 0;
 			for (var j = 0; j < array.length; j++) {    
-				if($scope.checks.insensitive == true){array[j] = array[j].toUpperCase();}			
+				if($scope.checks.insensitive == true){array[j] = array[j].toLowerCase();}			
 				if($scope.checks.trim == true){array[j] = array[j].trim();}
 				if($scope.checks.blank == true && array[j] != ""){
 					newArray[indexNewArray] = array[j];
