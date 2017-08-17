@@ -2,6 +2,7 @@
 app.controller("getUniqueListController", function ($scope) {
 		$scope.types = [
     	{typeConcat : "new line", symbol : "\n"},
+			{typeConcat : "tab", symbol : "\t"},
 			{typeConcat : "semicolon", symbol : ";"},
 			{typeConcat : "dash", symbol : "-"},
 			{typeConcat : "underscore", symbol : "_"},

@@ -1,0 +1,31 @@
+<h1>To SQL In</h1>
+<h3>This functionality was created to include strings in ours SQL statements</h3>
+<h4>SELECT value FROM TABLE WHERE ID IN ('string1','string2',...,'stringN')</h4>
+<p>Enter your string in the box below separated by <select ng-model="selectedType" ng-init="selectedType=types[0]" ng-options="x.typeConcat for x in types">
+</select></p>
+<div>
+		<div style="display:block">
+    	<textarea  rows="8" cols="80" ng-model="stringToReplace"></textarea>
+		</div>
+		<div style="display:block">
+			<label>
+				<input type="checkbox" ng-model="checks.double" ng-click="UpdateCheckBox('toDouble')">
+				<b>" (double blockquote)</b>
+			</label>
+			<label>
+				<input type="checkbox" ng-model="checks.simple" ng-click="UpdateCheckBox('toSimple')">
+				<b>' (simple blockquote)</b>
+			</label>
+			<button class="btn btn-default" style="display:block" ng-click="replaceString()">Replace</button>
+			</label>
+		</div>
+</div>
+
+<!--select ng-model="selectedType" ng-init="selectedType=types[0]" ng-options="x.typeConcat for x in types">
+</select-->
+<p style="color:red" ng-if="msgError != undefined">{{msgError}}</p>
+<div style="display:block; margin-top: 20px;" ng-if="stringOut != undefined">
+	<label>
+    <textarea  rows="8" cols="60" ng-model="stringOut"></textarea>
+	</label>
+</div>

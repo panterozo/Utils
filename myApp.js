@@ -19,6 +19,10 @@ app.config(function($routeProvider) {
 		.when("/toOneLineString", {
         templateUrl : "toOneLineString.html",
         controller : "toOneLineStringController"
+    })
+		.when("/toSQLIn", {
+        templateUrl : "toSQLIn.html",
+        controller : "toSQLInController"
     });
 
 
