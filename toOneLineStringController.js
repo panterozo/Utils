@@ -19,7 +19,7 @@ app.controller("toOneLineStringController", function ($scope) {
 
 
     $scope.stringIn = "";
-    $scope.stringOut = "";
+    $scope.stringOut = undefined;
     $scope.replaceIn = "";
     $scope.replaceOut = "";
     $scope.msgError = undefined;
@@ -36,7 +36,7 @@ app.controller("toOneLineStringController", function ($scope) {
 		$scope.replaceString = function(){
 			try{
 				$scope.msgError = undefined;
-	    	$scope.stringOut = "";
+	    	$scope.stringOut = undefined;
 				var localStringIn = $scope.stringToReplace;
 				if(localStringIn != ""){
 					
@@ -56,6 +56,10 @@ app.controller("toOneLineStringController", function ($scope) {
 						localStringIn = localStringIn.toUpperCase();
 					}
 					if($scope.replaceIn != "" && $scope.replaceOut != ""){
+						var replace = new RegExp($scope.replaceIn,"g");
+						localStringIn = localStringIn.replace(replace,$scope.replaceOut);
+					}
+					else if($scope.replaceIn != ""){
 						var replace = new RegExp($scope.replaceIn,"g");
 						localStringIn = localStringIn.replace(replace,$scope.replaceOut);
 					}
