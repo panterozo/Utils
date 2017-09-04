@@ -47,6 +47,7 @@ app.controller("getUniqueListController", function ($scope) {
 						}*/
 					}else{
 						$scope.msg = "The list hasn't duplicates values. Total Elements ("+array.length+")";
+						$scope.uniqueTableValues = result.origin.join("\n");
 					}			
 				}else{
 					$scope.msg = "Please insert elements in the textarea box";
