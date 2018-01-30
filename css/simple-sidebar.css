@@ -104,7 +104,7 @@
 @media(min-width:768px) {
     #wrapper {
         padding-left: 0;
-				color: #343937;
+				color: #FFFFFF;
     }
 
     #wrapper.toggled {
@@ -132,6 +132,9 @@
 
 
 body{
+		background-color: #007A96;
+}
 
-				background-color: #007A96;
+select, textarea, input{
+    color: #343a40;
 }

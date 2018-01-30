@@ -23,7 +23,7 @@
 
 <!--select ng-model="selectedType" ng-init="selectedType=types[0]" ng-options="x.typeConcat for x in types">
 </select-->
-<p style="color:red" ng-if="msgError != undefined">{{msgError}}</p>
+<p style="color:yellow" ng-if="msgError != undefined">{{msgError}}</p>
 <div style="display:block; margin-top: 20px;" ng-if="stringOut != undefined">
 	<label>
     <textarea  rows="8" cols="60" ng-model="stringOut"></textarea>
