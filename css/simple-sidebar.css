@@ -30,7 +30,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #6c757d;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -71,7 +71,8 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+		font-weight: bold;
+    color: #FFFFFF;
 }
 
 .sidebar-nav li a:hover {
@@ -92,7 +93,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: #FFFFFF;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -103,6 +104,7 @@
 @media(min-width:768px) {
     #wrapper {
         padding-left: 0;
+				color: #343937;
     }
 
     #wrapper.toggled {
@@ -126,4 +128,10 @@
         position: relative;
         margin-right: 0;
     }
+}
+
+
+body{
+
+				background-color: #007A96;
 }
